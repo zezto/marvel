@@ -1,0 +1,55 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 75px auto  auto ;
+    grid-template-columns: repeat(8, 1fr);
+    margin-left: 30px;
+    margin-right: 30px;
+    grid-template-areas: 
+    " . . . title title . . ."
+    " con con con con . img img img"
+    " . . . . . . . .";
+}
+
+.item {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+#title {
+    grid-column: 1 / -1;
+    grid-area: title;
+}
+
+#content {
+    grid-column: 1 / 5;
+    grid-row: 3;
+    text-align: center;
+    grid-area: con;
+}
+#imgg{
+    grid-column: 6 / 9;
+    grid-row: 3;
+    grid-area: img;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+@media only screen and (max-device-width: 480px){
+    .container{
+        grid-template-areas: 
+        " title title title title title title title title"
+        "img img img img img img img img"
+        " con con con con con con con con";
+    }
+    img{
+        width: 80%;
+        height: auto;
+        justify-self: center;
+    }
+}

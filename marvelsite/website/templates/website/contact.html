@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'website/base.html' %}
+{% load staticfiles %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Marvel |{% block title %}Contact{% endblock title %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    {% block css %} <link rel="stylesheet" href="{% static 'css/contact.css' %}"> {% endblock css %}
+</head>
+{% block body %}
+<body>
+    <div class="container">
+        <h1 class="item" id="title">Contact Us</h1>
+        <h3 class="item" id="text">We love to hear your thoughts and suggestions, fill out the form below and we'll be
+            sure to read them.</h3>
+        <form action="#" method="post" class="item" id="form">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" value="Submit">
+        </form>
+        <img src="{% static 'images/hulk.jpg' %}" class="item" id="imgg">
+    </div>
+</body>
+{% endblock body %}
+</html>

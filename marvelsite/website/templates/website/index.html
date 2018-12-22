@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'website/base.html' %}
+{% load staticfiles %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Marvel |{% block title %}Blog{% endblock title %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">{% endblock css %}
+</head>
+
+<body>
+    {% block body %}
+    <div class="container">
+
+        <div class="item" id="image">
+            <img src="{% static 'images/newmarvel.jpg' %}" alt="kek">
+        </div>
+        <!--
+        <div class="item" id="side-catagory">
+            <h3>Top Catagories</h3>
+            <ul>
+                <li>Iron Man</li>
+                <li>Captain America</li>
+                <li>Thanos</li>
+                <li>Batman</li>
+            </ul>
+        </div> -->
+    </div>
+        <!--Post container starts here-->
+{% for article in a %}
+<div class="post-container">
+    <div class="item" id="content-title">
+        <H1>{{article.title}}</H1>
+    </div>
+    <div class="item" id="content-author">
+        <h3>By: {{article.author}}</h3>
+    </div>
+    <div class="item" id="content-image"><img src="{{article.image.url}}" alt="keke"></div>
+    <div class="item" id="content-text">{{article.readmore}}</div>
+
+
+    <div class="item" id="content-read-more"><a href="/{{article.pk}}">Read More!</a></div>
+</div>
+{% endfor %}
+
+    {% endblock body %}
+</body>
+<style>
+</style>
+
+</html>

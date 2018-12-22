@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'website/base.html' %}
+{% load staticfiles %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} {{a.title}} {% endblock title %}</title>
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'css/detail.css'%}"> {% endblock css %}
+</head>
+
+<body>
+    {% block body %}
+    <div class="container">
+        <div class="item" id="content-img"><img src="{{a.image.url}}" alt=""></div>
+        <div class="item" id="content-title">
+            <h1>{{a.title}}</h1>
+        </div>
+        <div class="item" id="content-author">
+            <h3>By: {{a.author}}</h3>
+        </div>
+        <div class="item" id="content-content">
+            {{a.content|safe}}
+        </div>
+        <div class="item" id="ad">adsenses</div>
+        <div class="item" id="ad2">adsense2</div>
+        <div class="item" id="amza-aff">Amazon affliate </div>
+    </div>
+    {% endblock body %}
+</body>
+
+</html>

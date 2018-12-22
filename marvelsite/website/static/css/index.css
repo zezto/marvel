@@ -1,0 +1,105 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(8, 1fr);
+    margin: 10px;
+    grid-template-areas: 
+    " image image image image image image image image";
+
+}
+.post-container{
+    display: grid;
+    grid-template-rows: 70px 30px auto;
+    grid-template-columns: repeat(8, 1fr);
+    margin: 10px;
+    grid-template-areas: 
+    " . . title title title title . ."
+    " . . . author author . . ."
+    " . . image image image image . ."
+    " . . read read read read . ."
+    " . . . read-more read-more . . .";
+
+}
+.item {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+#image {
+    grid-column: 1 / -1;
+    grid-area: image;
+}
+
+#image img {
+    width: 60vw;
+    height: auto;
+    margin: 10px;
+    justify-self: center;
+}
+
+#content-title {
+    grid-column: 3 / 7;
+    text-align: center;
+    grid-area: title;
+}
+
+#content-author {
+    grid-column: 3/7;
+    grid-area: author;
+}
+
+#content-image {
+    grid-column: 3 / 7;
+    grid-area: image;
+}
+
+#content-image img {
+    width: 70%;
+    height: auto;
+    justify-self: center;
+}
+
+#content-text {
+    padding: 25px;
+    grid-column: 3 / 7;
+    text-align: center;
+    grid-area: read;
+}
+
+#content-read-more {
+    grid-column: 4 / 6;
+    padding: 10px;
+    grid-area: read-more;
+}
+
+#content-read-more a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(182, 8, 8);
+    font-weight: bolder;
+    padding: 10px;
+    font-size: 20px;
+}
+
+@media only screen and (max-device-width: 480px){
+    #image img{
+        width: 100%;
+        height: auto;
+        margin: 0 0 ;
+
+    }
+    .post-container{
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: 
+        " title title title title title title title title"
+        " image image image image image image image image"
+        ". author author author author author author ."
+        " read read read read read read read read"
+        " read-more read-more read-more read-more read-more read-more read-more read-more";
+    }
+}

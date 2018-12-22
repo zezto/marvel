@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'website/base.html' %}
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'css/comments.css'%}">{% endblock css %}
+</head>
+<body>
+    {% block body %}
+    <div class="container">
+        {% for c in com %}
+      <div class="item" id="comment">
+          <h3>{{c.name}}</h3>
+          <h3>{{c.email}}</h3>
+          <h3>{{c.text}}</h3>
+
+      </div>
+      {% endfor %}
+    </div>
+    {% endblock body %}
+</body>
+</html>

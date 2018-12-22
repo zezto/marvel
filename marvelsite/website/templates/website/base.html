@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Marvel|{% block title %} {% endblock title %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    {% block css %} {% endblock css %}
+</head>
+
+<body>
+
+    <div class="menu">
+        <div class="menu-item" id="menu-title">
+            <a href="/">
+                <h1>Le Marvel |<b>Blog</b></h1>
+            </a>
+        </div>
+        <div class="menu-item" id="menu-menu">
+            <div id="flex-menu">
+                <a href="/">
+                    <h2>Blog</h2>
+                </a>
+                <a href="/contact">
+                    <h2>Contact</h2>
+                </a>
+                <a href="/about">
+                    <h2>About</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+    {% block body %}
+
+    {% endblock body %}
+
+</body>
+
+<style>
+    .menu {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 50px);
+    }
+
+    .menu-item {
+        display: grid;
+        justify-content: center;
+        align-content: center;
+    }
+
+    #menu-title {
+        grid-column: 1 / -1;
+    }
+
+    #menu-menu {
+        grid-column: 1 / -1;
+    }
+
+    #menu-title a {
+        text-decoration: none;
+        color: black;
+    }
+
+    #flex-menu {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    #flex-menu h2{
+        margin: 15px;
+    }
+    #flex-menu a{
+        text-decoration: none;
+        color: black;
+    }
+
+
+</style>
+
+</html>

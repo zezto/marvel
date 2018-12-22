@@ -1,0 +1,73 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 75px auto auto;
+    grid-template-columns: repeat(8, 1fr);
+    margin: 10px;
+    grid-template-areas: 
+    " . . title title title title . ."
+    " con con con . . . . ."
+    " form form form . img img img img";
+}
+
+.item {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+#title {
+    grid-column: 1 / -1;
+    grid-area: title;
+}
+
+#text {
+    grid-row: 2;
+    grid-column: 1 / 4;
+    grid-area: con;
+}
+
+#form {
+    grid-row: 3;
+    grid-column: 1 / 4;
+    justify-content: left;
+    grid-area: form;
+}
+
+#btn-submit {
+    grid-row: 5;
+    padding: 8px;
+    margin-top: 8px;
+}
+
+#imgg {
+    grid-column: 4 / 9;
+    grid-row: 3 ;
+    grid-area: img;
+}
+
+img {
+    width: 80%;
+    height: auto;
+    align-self: center;
+    justify-self: center;
+}
+@media only screen and (max-device-width: 480px){
+    .container{
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: 
+        " title title title title title title title title"
+        " img img img img img img img img"
+        " con con con con con con con con"
+        " form form form form form form form form";
+    }
+    .item{
+        margin: 0 auto;
+    }
+    h3 {
+        text-align: center;
+    }
+}
