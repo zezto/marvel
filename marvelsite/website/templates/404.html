@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>404 $)$</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/404.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet">
+</head>
+
+<body>
+    <img src="https://i.imgur.com/hZUJnet.png" alt="404 error fren" class="mx-auto d-block img-fluid">
+    <div class="container-fluid">
+        <h1>404</h1>
+        <h2>Page not found</h2>
+        <h3>The Page you're looking for doesnt exist or an other error occured</h3>
+    </div>
+</body>
+<style>
+.container-fluid{
+    font-family: 'Reenie Beanie', cursive;
+    text-align: center;
+}
+h1{
+    font-size: 8rem;
+}
+h2{
+    font-size: 6rem;
+    margin-top: -40px;
+}
+h3{
+    font-size: 4rem;
+
+}
+
+@media only screen and (max-device-width: 480px) {
+    h1{
+        font-size: 4rem;
+    }
+
+    h2{
+        font-size: 3rem;
+        margin-top: -20px;
+    }
+    h3{
+        font-size: 2rem;
+
+    }
+}
+
+</style>
+</html>

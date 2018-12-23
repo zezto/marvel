@@ -1,0 +1,80 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto 50px 30px 100px auto auto 50px 50px 50px ;
+    max-width: 80%;
+    margin: 0 auto; 
+    grid-template-areas: 
+    " . image image image ."
+    " . title title title ."
+    " . . author . ."
+    "ad content content content ad2"
+    ". content content content ."
+    ". content content content ."
+    " . content content content ."
+    ". . . . ."
+    ". aff aff aff .";
+}
+.item{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+#content-img{
+    grid-column: 1 / -1;
+    grid-area: image;
+}
+#content-img img {
+    width: 60%;
+    height: auto;
+    justify-self: center;
+}
+#content-title{
+    grid-column: 1 / -1;
+    grid-area: title;
+}
+#content-author{
+    grid-column: 1 / -1;
+    grid-area: author;
+}
+#ad{
+    grid-area: ad;
+}
+#ad2{
+    grid-area: ad2;
+}
+#content-content{
+    grid-column: 2 /5;
+    grid-row: 4/8;
+    text-align: center;
+    grid-area: content;
+}
+#amza-aff{
+    grid-row: 9;
+    grid-column: 2 / 5;
+    grid-area: aff;
+}
+
+@media only screen and (max-device-width: 480px){
+    .container{
+        grid-template-rows: auto auto 30px auto auto auto;
+        grid-template-areas: 
+        " image image image image image"
+        " title title title title title"
+        " . author author author ."
+        " content content content content content"
+        " ad ad ad2 ad2 ad2"
+        "aff aff aff aff aff";
+    }
+    h1{
+        text-align: center
+    }
+    #content-img img {
+        width: 100%;
+        height: auto;
+        justify-self: center;
+    }
+}

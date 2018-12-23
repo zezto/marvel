@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Article, Contacts
 from.forms import ContactForm
@@ -25,9 +25,9 @@ def contact(request):
     return render(request, 'website/contact.html', {'form': form})
 
 def detail(request, article_id):
-    a = Article.objects.get(pk=article_id)
-    context = {'a': a}
-    return render(request, 'website/details.html', context=context)
+    
+    a = get_object_or_404(Article, pk=article_id)
+    return render(request, 'website/details.html', {'a': a})
 
 def comments(request):
     com = Contacts.objects.all()

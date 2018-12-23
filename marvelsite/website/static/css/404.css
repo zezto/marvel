@@ -1,0 +1,32 @@
+.container-fluid{
+    font-family: 'Reenie Beanie', cursive;
+    text-align: center;
+}
+h1{
+    font-size: 8rem;
+}
+h2{
+    font-size: 6rem;
+    margin-top: -40px;
+}
+h3{
+    font-size: 4rem;
+
+}
+
+@media only screen and (max-device-width: 480px) {
+    h1{
+        font-size: 4rem;
+    }
+
+    h2{
+        font-size: 3rem;
+        margin-top: -20px;
+    }
+    h3{
+        font-size: 2rem;
+
+    }
+}
+
+
